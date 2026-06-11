@@ -1,0 +1,2 @@
+timestamp,n,concurrency,pool_size,p50_ms,p99_ms,mean_ms,throughput_cps,engine
+2026-06-11T06:21:34.250Z,2000,16,8,0.090,0.604,0.127,124233.9,mock-lean
