@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "paths": {
+      "@proofwars/elo": ["./packages/elo/src/glicko2.ts"],
+      "@proofwars/prover-pool": ["./services/prover-pool/src/index.ts"]
+    }
+  },
+  "include": ["packages", "services", "apps", "bench"],
+  "exclude": ["node_modules", "**/node_modules"]
+}

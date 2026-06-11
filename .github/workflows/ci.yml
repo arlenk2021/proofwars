@@ -1,0 +1,34 @@
+name: ci
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unit + property tests
+        run: make test
+      - name: Glicko-2 invariants (property-based, 10k cases)
+        run: make test-elo-properties
+
+  escape-suite:
+    name: sandbox-escape regression corpus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build worker image
+        run: docker build -t prover-worker services/prover-pool
+      - name: Every hostile snippet must fail safely
+        run: make escape-suite
+        # Red here = the threat model is broken. Do not merge. Do not
+        # rationalize. See SECURITY.md.
+
+  latency-benchmark:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Proof-check latency regression (p50 < 500ms gate)
+        run: make bench-check-latency
+      - name: Append benchmark history
+        run: make bench-report >> docs/benchmarks/latency-history.csv

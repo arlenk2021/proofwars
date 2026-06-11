@@ -1,0 +1,21 @@
+name: 🧩 Puzzle theorem suggestion
+description: Propose a theorem for the daily puzzle pool
+labels: [content, theorem]
+body:
+  - type: textarea
+    attributes:
+      label: Lean 4 statement
+      render: lean
+    validations: { required: true }
+  - type: textarea
+    attributes:
+      label: Reference proof (kept private until used)
+      render: lean
+    validations: { required: true }
+  - type: dropdown
+    attributes:
+      label: Estimated difficulty
+      options: [Warm-up (<2 min), Standard (2–10 min), Boss (10+ min)]
+  - type: input
+    attributes:
+      label: Required imports (must be in the frozen snapshot)

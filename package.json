@@ -1,0 +1,17 @@
+{
+  "name": "proofwars",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.18.1",
+  "scripts": {
+    "test": "vitest run",
+    "test:elo-properties": "vitest run packages/elo/test/glicko2.properties.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "fast-check": "^3.23.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
