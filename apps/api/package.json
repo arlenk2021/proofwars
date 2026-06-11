@@ -1,0 +1,14 @@
+{
+  "name": "@proofwars/api",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/server.ts",
+  "dependencies": {
+    "ws": "^8.18.0",
+    "@proofwars/elo": "workspace:*",
+    "@proofwars/prover-pool": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.13"
+  }
+}

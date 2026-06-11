@@ -1,0 +1,7 @@
+{
+  "name": "@proofwars/elo",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/glicko2.ts",
+  "exports": { ".": "./src/glicko2.ts" }
+}
